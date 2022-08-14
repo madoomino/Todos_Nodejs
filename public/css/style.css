@@ -1,0 +1,78 @@
+* {
+  margin: 0;
+}
+body {
+  background-color: #352f5b;
+}
+.container {
+  width: 40%;
+}
+span {
+  font-size: x-large;
+}
+.cancelButton {
+  max-height: 2rem;
+}
+
+input[type="text"],
+input[type="text"]:focus {
+  color: #fff;
+  border: none;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+li.list-group-item {
+  background-color: #423a6f;
+  color: #f8f9fa;
+}
+
+.delete {
+  cursor: pointer;
+}
+
+label.add {
+  margin-bottom: 15px;
+}
+
+.filtred {
+  display: none !important;
+}
+
+.hidden {
+  display: none;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.edit-div {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-content: center;
+}
+.edit-div input[type="text"] {
+  border-radius: 4px;
+  min-width: 100%;
+  padding: 2px;
+}
+.edit-div input[type="text"]:focus {
+  outline: none;
+  border: 2px solid #766fa5a4;
+}
+.form-msg-wrapper {
+  min-width: 70%;
+}
+.edit-form {
+  min-width: 80%;
+}
+.red-color {
+  color: red !important;
+}
+.btns {
+  display: flex;
+  gap: 0.5rem;
+}
