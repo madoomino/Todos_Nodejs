@@ -3,9 +3,8 @@ const express = require("express"),
   todoRouter = require("./routes/todoRouter"),
   morgan = require("morgan");
 
-// Express Part
-// process.env.STATUS === 'dev' ? app.use(morgan("dev")) : null;
-//
+process.env.STATUS === 'dev' ? app.use(morgan("dev")) : null;
+
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static("public"));
