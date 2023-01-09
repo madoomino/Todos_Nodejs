@@ -40,19 +40,7 @@ exports.createTodos = async (req, res) => {
     });
   }
 };
-exports.deleteTodos = async (req, res) => {
-  try {
-    const todos = await Todos.deleteMany({});
-    return res.status(201).json({
-      status: "success",
-      message: "All Deleted",
-    });
-  } catch (error) {
-    return res.status(400).json({
-      message: error.message,
-    });
-  }
-};
+
 // ----{For Individual Todo}----
 
 // getting document by id
