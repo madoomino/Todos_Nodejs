@@ -1,34 +1,29 @@
 <%- include('./inc/header.ejs') %>
 <div class="container">
-  <!--  HEADER  -->
+  <!-- HEADER -->
   <header class="text-center text-light my-4">
-    <h3 class="mb-4">صلى الله على محمد</h3>
+    <h3 class="mb-4">Todos</h3>
   </header>
-  <!--  FORM  -->
-  <form
-    class="add text-center my-4 add-input"
-    method="POST"
-    action="/"
-    id="todoForm"
-  >
-    <label for="add" class="add text-light" id="add-todo"
-      >Add a new todo:</label
-    >
-    <input
-      type="text"
-      class="form-control m-auto todoDescription"
-      name="todoDescription"
-      placeholder="Add New todo"
-      style="text-align: center"
-      id="todoDescription"
-    />
+  <!-- FORM -->
+  <form class="add text-center my-4 add-input" method="POST" action="/" id="todoForm">
+    <div class="input-group">
+      <input
+        type="text"
+        class="form-control todoDescription"
+        name="todoDescription"
+        placeholder="Add New todo"
+        style="text-align: center"
+        id="todoDescription"
+      />
+      <div class="input-group-append">
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </div>
+    </div>
   </form>
-  <!--  LIST  -->
+  <!-- LIST -->
   <ul class="list-group todos mx-auto text-light">
     <% for (todo of todos) { %>
-    <li
-      class="list-group-item d-flex justify-content-between align-items-center todo"
-    >
+    <li class="list-group-item d-flex justify-content-between align-items-center todo">
       <span class="todoSpan"><%= todo.todoDescription %></span>
       <div class="hidden editDiv">
         <div class="form-msg-wrapper">
@@ -36,10 +31,7 @@
             <input type="text" name="todoDescription" class="todo-input" />
             <input type="hidden" name="id" value="<%-todo._id%>" />
           </form>
-          <p
-            class="errMsg"
-            style="margin-bottom: -0.5rem; color: red; font-size: 16px"
-          ></p>
+          <p class="errMsg" style="margin-bottom: -0.5rem; color: red; font-size: 16px"></p>
         </div>
         <button class="cancelButton btn btn-outline-info btn-sm">Cancel</button>
       </div>
@@ -47,24 +39,11 @@
         <button class="editButton btn btn-outline-primary btn-sm">Edit</button>
         <form action="/delete" method="POST">
           <input type="hidden" name="id" value="<%-todo._id%>" />
-          <input
-            type="submit"
-            name="submit"
-            value="Delete"
-            class="delete btn btn-outline-danger btn-sm"
-          />
+          <input type="submit" name="submit" value="Delete" class="delete btn btn-outline-danger btn-sm" />
         </form>
       </div>
     </li>
     <% } %>
-    <li
-      class="list-group-item d-flex justify-content-between align-items-center todo"
-    >
-      <span class="todoSpan" style="font-size: small; text-align: center"
-        >سبحان الله والحمد لله والله أكبر لا إله إلا الله وحده لا شريك له له
-        الملك وله الحمد يحيي ويميت وهو على كل شيء قدير</span
-      >
-    </li>
   </ul>
 </div>
 <%- include('./inc/footer.ejs') %>
