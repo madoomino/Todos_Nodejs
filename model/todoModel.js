@@ -1,8 +1,9 @@
-const { mongoose } = require("../config/database");
+const mongoose = require("mongoose");
 // Schema Setup
 const todoSchema = mongoose.Schema({
   todoDescription: {
     type: String,
+    required: true,
   },
 });
 
